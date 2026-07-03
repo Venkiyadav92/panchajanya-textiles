@@ -6,7 +6,7 @@ import { ReturnPolicyComponent } from './pages/return-policy/return-policy.compo
 import { OurStoresComponent } from './pages/our-stores/our-stores.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, title: 'Panchajanya Textiles' },
   { path: 'terms', component: TermsComponent, title: 'Terms & Conditions | Panchajanya Textiles' },
   { path: 'privacy-policy', component: PrivacyPolicyComponent, title: 'Privacy Policy | Panchajanya Textiles' },
   { path: 'return-policy', component: ReturnPolicyComponent, title: 'Return Policy | Panchajanya Textiles' },
