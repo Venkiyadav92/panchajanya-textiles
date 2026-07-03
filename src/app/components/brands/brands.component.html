@@ -1,0 +1,13 @@
+<section class="brands-section" id="brands">
+  <div class="container">
+    <div class="brands-logo-row">
+      <img
+        *ngFor="let logo of brandLogos"
+        [src]="logo.src"
+        [alt]="logo.alt"
+        class="brand-logo-image"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

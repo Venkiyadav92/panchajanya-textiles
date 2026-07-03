@@ -1,0 +1,84 @@
+<section class="about-section" id="about">
+  <div class="about-collage-section">
+    <div class="about-collage-shell">
+      <div class="simple-collage">
+        <img
+          *ngFor="let image of collageImages"
+          [src]="image.src"
+          [alt]="image.alt"
+          [class]="image.className"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="section-header" style="text-align:left; margin-bottom: 32px;">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">Tamil Nadu's Leading <span>Textile Distributor</span></h2>
+          <div class="section-divider" style="margin: 0 0 20px;"></div>
+        </div>
+
+        <p class="about-lead">
+          Panchajanya Textiles is a premier wholesale and distribution company headquartered in Madurai,
+          serving the entire state of Tamil Nadu with quality textile products since 1995.
+        </p>
+
+        <p class="about-body">
+          With nearly three decades of industry experience, we have established ourselves as a trusted
+          partner for retailers, institutions, schools, corporate houses, and distributors. Our extensive
+          network and deep brand partnerships allow us to deliver the finest home textiles, uniforms,
+          and fabric solutions at competitive prices.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight">
+            <div class="hl-icon"><i class="fas fa-home"></i></div>
+            <div class="hl-text">
+              <strong>Home Textiles</strong>
+              <span>Bedsheets, blankets, towels & premium furnishings</span>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="hl-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="hl-text">
+              <strong>Uniform Solutions</strong>
+              <span>School, corporate & industrial uniforms</span>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="hl-icon"><i class="fas fa-scroll"></i></div>
+            <div class="hl-text">
+              <strong>Wholesale Fabrics</strong>
+              <span>Cotton, crochet, traditional & knitted fabrics</span>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="hl-icon"><i class="fas fa-truck"></i></div>
+            <div class="hl-text">
+              <strong>Pan Tamil Nadu Distribution</strong>
+              <span>Reliable bulk supply across all districts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-ctas">
+          <button class="btn-primary" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+            <i class="fas fa-phone"></i> Contact Us
+          </button>
+          <button class="btn-outline" onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})">
+            <i class="fas fa-box-open"></i> View Gallery
+          </button>
+        </div>
+
+        <p class="about-terms-note">
+          By engaging with Panchajanya Textiles, you agree to our
+          <a routerLink="/terms">Terms &amp; Conditions</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

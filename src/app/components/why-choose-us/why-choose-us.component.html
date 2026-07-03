@@ -1,0 +1,45 @@
+<section class="why-section" id="why-choose-us">
+  <div class="why-bg-deco">
+    <div class="deco-circle deco-c1"></div>
+    <div class="deco-circle deco-c2"></div>
+  </div>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Why Us</span>
+      <h2 class="section-title">Why Choose <span>Panchajanya Textiles</span>?</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">We bring you the best of India's premium textile brands with the trust, reliability, and personal service that only a 29-year-old family business can offer.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let f of features">
+        <div class="feature-icon" [style.background]="f.color + '15'">
+          <i [class]="f.icon" [style.color]="f.color"></i>
+        </div>
+        <h3 class="feature-title">{{ f.title }}</h3>
+        <p class="feature-desc">{{ f.desc }}</p>
+        <div class="feature-line" [style.background]="f.color"></div>
+      </div>
+    </div>
+    <div class="cert-row">
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-award"></i></div>
+        <div><strong>5 Premium Brands</strong><span>Authorized Distributor</span></div>
+      </div>
+      <div class="cert-sep"></div>
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <div><strong>Tamil Nadu Wide</strong><span>Distribution Network</span></div>
+      </div>
+      <div class="cert-sep"></div>
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-users"></i></div>
+        <div><strong>500+ Partners</strong><span>Retail &amp; Institutional</span></div>
+      </div>
+      <div class="cert-sep"></div>
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-history"></i></div>
+        <div><strong>29+ Years</strong><span>Industry Experience</span></div>
+      </div>
+    </div>
+  </div>
+</section>

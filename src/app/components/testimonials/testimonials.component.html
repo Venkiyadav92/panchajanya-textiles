@@ -1,0 +1,23 @@
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Client Feedback</span>
+      <h2 class="section-title">What Our <span>Clients Say</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Trusted by retailers and dealers across Tamil Nadu for dependable service and quality.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let t of testimonials">
+        <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+        <p class="t-text">{{ t.text }}</p>
+        <div class="t-author">
+          <div class="t-avatar">{{ t.initials }}</div>
+          <div class="t-info">
+            <strong>{{ t.name }}</strong>
+            <span>{{ t.biz }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

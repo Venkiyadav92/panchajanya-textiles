@@ -1,0 +1,15 @@
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Product Showcase</span>
+      <h2 class="section-title">Our <span>Bed Gallery</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">A collection of premium bed designs we offer for modern homes and hospitality spaces.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let item of items">
+        <img [src]="item.image" [alt]="item.alt" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>

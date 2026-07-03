@@ -1,0 +1,61 @@
+<footer class="footer">
+  <!-- Top footer -->
+  <div class="footer-top">
+    <div class="container footer-top-inner">
+      <div class="footer-brand">
+        <div class="fb-logo">
+          <img
+            src="/assets/PTM%20Letter%20pad%20(2).jpeg"
+            alt="Panchajanya Textiles logo"
+            class="fb-logo-image"
+          />
+        </div>
+        <p class="fb-desc">Tamil Nadu's trusted authorized distributor for India's leading home textile brands since 1995. Serving retailers, institutions, and corporates with quality products and reliable service.</p>
+        <div class="fb-brands">
+          <span class="fb-brand-tag" *ngFor="let b of brands">{{ b }}</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li *ngFor="let link of links">
+            <a (click)="scrollTo(link.href)"><i class="fas fa-angle-right"></i> {{ link.label }}</a>
+          </li>
+          <li *ngFor="let policy of policyLinks">
+            <a [routerLink]="policy.route"><i class="fas fa-angle-right"></i> {{ policy.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Offices</h4>
+        <div class="fc-offices">
+          <div class="fc-office" *ngFor="let o of offices">
+            <strong>{{ o.city }}</strong>
+            <div class="fc-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{ o.address }}</span>
+            </div>
+            <div class="fc-item">
+              <i class="fas fa-phone"></i>
+              <span>{{ o.phone }} &middot; {{ o.mobile }}</span>
+            </div>
+          </div>
+        </div>
+        <a class="footer-call" href="tel:+919842353698">
+          <i class="fas fa-phone-alt"></i> Call Now
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; {{ currentYear }} Panchajanya Textiles, Madurai. All Rights Reserved.</p>
+      <p class="fb-auth">Authorized Distributor: Bombay Dyeing · Trident · Indo Count · Aspire · Memoir</p>
+    </div>
+  </div>
+</footer>

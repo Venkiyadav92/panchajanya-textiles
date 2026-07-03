@@ -1,0 +1,102 @@
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Contact <span>Us</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Reach out for bulk orders, dealer inquiries, product pricing, or any business queries. Our team responds promptly.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: Offices -->
+      <div class="contact-info">
+        <h3 class="ci-heading">Our Offices</h3>
+        <div class="office-cards">
+          <div class="office-card" *ngFor="let o of offices">
+            <div class="oc-header">
+              <div class="oc-icon"><i [class]="o.icon"></i></div>
+              <div>
+                <strong>Panchajanya Textiles &ndash; {{ o.city }}</strong>
+                <span>{{ o.label }}</span>
+              </div>
+            </div>
+            <p class="oc-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>
+                <span *ngFor="let line of o.addressLines">{{ line }}<br></span>
+              </span>
+            </p>
+            <p class="oc-phone"><i class="fas fa-phone"></i> {{ o.phones.join(', ') }}</p>
+            <p class="oc-phone"><i class="fas fa-mobile-alt"></i> {{ o.mobile }}</p>
+            <p class="oc-email"><i class="fas fa-envelope"></i> {{ o.email }}</p>
+            <a class="oc-directions" [href]="o.mapsLink" target="_blank" rel="noopener">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick contacts -->
+        <div class="quick-contacts">
+          <a class="qc-btn phone" href="tel:+919842353698">
+            <i class="fas fa-phone-alt"></i>
+            <div><strong>Call Madurai Office</strong><span>+91 98423 53698</span></div>
+          </a>
+          <a class="qc-btn phone" href="tel:+917305036961">
+            <i class="fas fa-phone-alt"></i>
+            <div><strong>Call Chennai Office</strong><span>+91 73050 36961</span></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap">
+        <div class="form-header">
+          <h3>Send Us an Enquiry</h3>
+          <p>Fill in the details and we'll get back within 24 hours</p>
+        </div>
+
+        <div class="success-msg" *ngIf="submitted">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Thank you! We'll contact you soon.</strong>
+            <span>Your enquiry has been received.</span>
+          </div>
+        </div>
+
+        <form class="contact-form" (ngSubmit)="submitForm()" *ngIf="!submitted">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" [(ngModel)]="form.name" name="name" placeholder="Enter your full name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <div class="input-wrap">
+              <i class="fas fa-phone"></i>
+              <input type="tel" [(ngModel)]="form.phone" name="phone" placeholder="+91 98XXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Business Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-store"></i>
+              <input type="text" [(ngModel)]="form.business" name="business" placeholder="Your shop/company name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Your Message / Requirements *</label>
+            <div class="input-wrap textarea-wrap">
+              <i class="fas fa-comment-alt"></i>
+              <textarea [(ngModel)]="form.message" name="message" placeholder="Tell us about your product requirements, order quantity, location..." rows="5" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary form-submit">
+            <i class="fas fa-paper-plane"></i> Send Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

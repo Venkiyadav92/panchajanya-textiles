@@ -1,0 +1,31 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="container nav-inner">
+    <!-- Logo -->
+    <a class="brand" (click)="scrollTo('#home')" aria-label="Panchajanya Textiles home">
+      <img
+        src="/assets/PTM%20Letter%20pad%20(2).jpeg"
+        alt="Panchajanya Textiles logo"
+        class="brand-logo"
+      />
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li *ngFor="let link of navLinks">
+        <a *ngIf="link.route" [routerLink]="link.route" (click)="menuOpen = false">{{ link.label }}</a>
+        <a *ngIf="!link.route" (click)="scrollTo(link.href!)">{{ link.label }}</a>
+      </li>
+      <li>
+        <a class="nav-cta" (click)="scrollTo('#contact')">
+          <i class="fas fa-envelope"></i> Get Quote
+        </a>
+      </li>
+    </ul>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-overlay" [class.show]="menuOpen" (click)="toggleMenu()"></div>

@@ -1,0 +1,71 @@
+<header class="legal-header">
+  <div class="container legal-header-inner">
+    <a class="legal-brand" routerLink="/">
+      <div class="legal-brand-icon">
+        <span>P</span>
+      </div>
+      <div class="legal-brand-text">
+        <span class="legal-brand-name">Panchajanya</span>
+        <span class="legal-brand-sub">Textiles &middot; Madurai</span>
+      </div>
+    </a>
+    <a class="legal-back" routerLink="/">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </div>
+</header>
+
+<main class="stores-page">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Find Us</span>
+      <h1 class="section-title">Our <span>Stores</span></h1>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Panchajanya-supplied Bombay Dyeing products are available at these retail locations across Tamil Nadu. Visit a store near you, or reach our offices directly via the <a routerLink="/" fragment="contact">Contact page</a>.</p>
+    </div>
+
+    <div class="store-grid">
+      <div class="store-card" *ngFor="let s of stores">
+        <div class="sc-header">
+          <div class="sc-icon"><i class="fas fa-store"></i></div>
+          <div>
+            <strong>{{ s.name }}</strong>
+            <span>{{ s.city }}</span>
+          </div>
+        </div>
+        <p class="sc-address">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>
+            <span *ngFor="let line of s.addressLines">{{ line }}<br></span>
+          </span>
+        </p>
+        <a class="sc-directions" [href]="s.mapsLink" target="_blank" rel="noopener">
+          <i class="fas fa-directions"></i> Get Directions
+        </a>
+      </div>
+    </div>
+
+    <section class="feedback-section">
+      <div class="section-header">
+        <span class="section-label">Client Feedback</span>
+        <h2 class="section-title">Trusted by <span>Our Partners</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="feedback-grid">
+        <div class="feedback-card" *ngFor="let f of feedback">
+          <div class="fc-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="fc-text">{{ f.text }}</p>
+          <div class="fc-stars">
+            <i class="fas fa-star" *ngFor="let s of [1,2,3,4,5]"></i>
+          </div>
+          <div class="fc-author">
+            <strong>{{ f.name }}</strong>
+            <span>{{ f.biz }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<app-footer></app-footer>
